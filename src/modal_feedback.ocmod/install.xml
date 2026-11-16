@@ -2,7 +2,7 @@
 <modification>
     <name>Modal feedback</name>
     <code>modal_feedback</code>
-    <version>1.21</version>
+    <version>1.22</version>
     <author>qMalmind | expoa.ru</author>
     <link>info@expoa.ru</link>
 
@@ -49,8 +49,10 @@
 			<add position="before">
 				<![CDATA[
 					// 	<yoga_feedback_extension>
-					$this->document->addStyle('catalog/view/javascript/yoga_feedback/yoga_feedback_modal.css');
-					$this->document->addScript('catalog/view/javascript/yoga_feedback/yoga_feedback_modal.js');
+					if($this->config->get('yoga_feedback_status')){
+						$this->document->addStyle('catalog/view/javascript/yoga_feedback/yoga_feedback_modal.css');
+						$this->document->addScript('catalog/view/javascript/yoga_feedback/yoga_feedback_modal.js');
+					}
                 ]]>
 			</add>
 		</operation>

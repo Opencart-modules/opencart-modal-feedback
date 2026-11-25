@@ -218,6 +218,8 @@ class ControllerExtensionModuleYogaFeedback extends Controller {
 	}
 
 	public function uninstall(){
+		$this->load->model('setting/setting');
+		$this->model_setting_setting->editSettingValue('yoga_feedback', 'yoga_feedback_status', 0);
 		// $sql_drop = "DROP TABLE `oc_feedbacks`;";
 		// $this->db->query($sql_drop);
 	}
